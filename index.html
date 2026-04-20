@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Portfolio</title>
+
+<style>
+/* =========================
+   ROOT VARIABLES (EDIT COLORS HERE)
+========================= */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #f5f5f5;
+    --accent: #39ff14; /* NEON GREEN */
+    --shadow: 0 8px 20px rgba(0,0,0,0.3);
+    --radius: 16px;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* SECTION */
+section {
+    margin: 40px 0;
+}
+
+/* HEADINGS */
+h2 {
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+/* CARD STYLE */
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--accent);
+}
+
+/* GRID LAYOUT */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* BUTTON */
+button {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--accent);
+    color: black;
+}
+
+/* PROFILE */
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    margin-bottom: 10px;
+}
+
+/* SKILLS */
+.skill {
+    text-align: center;
+    padding: 15px;
+}
+
+/* COLLAPSIBLE */
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         PROFILE SECTION
+         EDIT NAME, TAGLINE, IMAGE HERE
+    ========================= -->
+    <section class="profile">
+        <!-- Replace image source below -->
+        <img src="https://via.placeholder.com/150" alt="Profile Photo">
+
+        <!-- Replace your name (NO middle initial) -->
+        <h1>Your Full Name</h1>
+
+        <!-- Optional tagline -->
+        <p>Web Developer | IT Student</p>
+    </section>
+
+    <!-- =========================
+         EDUCATION SECTION
+         To add: duplicate <li>
+    ========================= -->
+    <section>
+        <h2>Education</h2>
+        <ul>
+            <li>Bachelor of Science in Information Technology – Your University</li>
+            <li>Senior High School – Your School</li>
+        </ul>
+    </section>
+
+    <!-- =========================
+         PROJECTS SECTION
+         To add: duplicate a .card
+    ========================= -->
+    <section>
+        <h2>Projects</h2>
+        <div class="grid grid-3">
+
+            <div class="card">
+                <h3>Project Title</h3>
+                <p>Short description of the project.</p>
+                <small>Technologies: HTML, CSS, JavaScript</small>
+            </div>
+
+            <div class="card">
+                <h3>Another Project</h3>
+                <p>Short description here.</p>
+                <small>Technologies: Python, MySQL</small>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================
+         SKILLS SECTION
+         To add: duplicate .card
+    ========================= -->
+    <section>
+        <h2>Skills</h2>
+        <div class="grid grid-3">
+
+            <div class="card skill">HTML</div>
+            <div class="card skill">CSS</div>
+            <div class="card skill">JavaScript</div>
+            <div class="card skill">Python</div>
+
+        </div>
+    </section>
+
+    <!-- =========================
+         AFFILIATIONS SECTION (OPTIONAL)
+         Toggle button included
+    ========================= -->
+    <section>
+        <h2>Affiliations</h2>
+
+        <button onclick="toggleSection('affiliations')">
+            Show / Hide Affiliations
+        </button>
+
+        <div id="affiliations" class="hidden">
+            <ul style="margin-top: 10px;">
+                <li>Organization Name – Role</li>
+                <li>Another Organization – Member</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- =========================
+         RESEARCH SECTION (OPTIONAL)
+         To add: duplicate <li>
+    ========================= -->
+    <section>
+        <h2>Research</h2>
+        <ul>
+            <li>Research Title – Short description</li>
+            <li>Another Study – Brief explanation</li>
+        </ul>
+    </section>
+
+</div>
+
+<script>
+/* =========================
+   SIMPLE INTERACTION
+   Toggle show/hide sections
+========================= */
+function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
